@@ -1,0 +1,42 @@
+name: Provision EKS Cluster
+
+on:
+  push:
+    branches:
+      - main
+      - aaron
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read # This is required for actions/checkout
+env:
+  AWS_REGION: "eu-west-2"
+
+jobs:
+  provision-eks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: setup brew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::427380295363:role/Github_AWS_OICD
+          role-session-name: samplerolesession
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Install eksctl
+        uses: moia-oss/setup-eksctl@v1
+        with:
+          version: "v0.161.0" # default is latest
+        id: install
+        #can we find anything online for below needs
+      - name: Create EKS cluster
+        run: |
+          . aws.sh
+          eksctl version | installEksCtl
+          echo "trying ensureClusterCreated"
+          ensureClusterCreated
