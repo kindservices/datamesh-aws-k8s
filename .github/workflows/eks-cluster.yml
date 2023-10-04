@@ -22,11 +22,5 @@ jobs:
 
       - name: Create EKS cluster
         run: |
-          eksctl create cluster \
-            --name <cluster-name> \
-            --version <eks-version> \
-            --region eu-west-2 \
-            --nodegroup-name <nodegroup-name> \
-            --node-type <node-type> \
-            --nodes <number-of-nodes>
+          make ensureClusterCreated
 

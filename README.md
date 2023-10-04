@@ -6,7 +6,24 @@ The makefile here serves as a kind of executable set of convenience functions fo
 
 The script assumes an AWS account, the `aws` cli installed and logged in (e.g. an ~/.aws/credentials file with a [default] entry). See install instructions [here](./loggingIn.md)
 
-# Usage
+# Github Actions Build
+
+This repo is setup with github actions in ./github/workflow, which need an `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` setting up.
+
+See [here](./awsIAM.md) for setting up AWS IAM.
+
+### Configure GitHub Secrets:
+
+Set up the following secrets in your GitHub repository:
+
+AWS_ACCESS_KEY_ID: Your AWS access key.
+AWS_SECRET_ACCESS_KEY: Your AWS secret key.
+
+To add secrets, go to your GitHub repository > Settings > Secrets > New repository secret.
+
+# Local Usage
+
+You can use this makefile locally as well provided you have an `aws` CLI installed (see [here](./loggingIn.md))
 
 ## Create a cluster on AWS:
 ```
