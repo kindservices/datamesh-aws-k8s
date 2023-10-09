@@ -24,15 +24,15 @@ function init() {
 function installEksCtl() {
     init
     echo "installing eksctl"
-    brew tap weaveworks/tap
-    brew install weaveworks/tap/eksctl
+    which brew && brew tap weaveworks/tap
+    which brew && brew install weaveworks/tap/eksctl
 }
 
 function ensureEKSCTL() {
     init
     echo -ne "checking EKSCTL `which eksctl`\r"
     echo "checking eksctl `which eksctl`"
-    which eksctl || installEksCtl
+    (which eksctl && echo "eksctl is installed") || installEksCtl
 }
 
 # 
