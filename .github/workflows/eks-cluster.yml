@@ -28,5 +28,10 @@ jobs:
 
       - name: Create EKS cluster
         run: |
+          echo "current dir"
+          pwd
+          echo "listing..."
+          ls -Alrth
+          echo "calling make..."
           make ensureClusterCreated
 
