@@ -34,7 +34,6 @@ jobs:
           ls -Alrth
           echo "calling make..."
           . aws.sh
-          debug
           echo "calling installEksCtl"
           installEksCtl
           echo "calling ensureClusterCreated"

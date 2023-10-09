@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 
-set -x
+# set -x
 
 # functions for creating an EKS cluster and setting local kubectl config
-
-function debug() {
-    init
-    echo "hello world"
-}
 
 function init() {
     export CLUSTER_NAME=${CLUSTER_NAME:-kind-lab-dev}
