@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#set -x
+set -x
 
 # functions for creating an EKS cluster and setting local kubectl config
 
