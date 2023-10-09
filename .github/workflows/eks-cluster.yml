@@ -35,4 +35,7 @@ jobs:
           echo "calling make..."
           . aws.sh
           debug
+          installEksCtl
+          echo "calling ensureClusterCreated"
+          ensureClusterCreated
 
