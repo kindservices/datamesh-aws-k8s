@@ -25,7 +25,11 @@ jobs:
           role-to-assume: arn:aws:iam::427380295363:role/Github_AWS_OICD
           role-session-name: samplerolesession
           aws-region: ${{ env.AWS_REGION }}
-
+      - name: Install eksctl
+        uses: moia-oss/setup-eksctl@v1
+        with:
+          version: '<version>' # default is latest
+        id: install
       - name: Create EKS cluster
         run: |
           echo "current dir"
