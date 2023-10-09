@@ -24,8 +24,8 @@ function init() {
 function installEksCtl() {
     init
     echo "installing eksctl"
-    which brew && brew tap weaveworks/tap
-    which brew && brew install weaveworks/tap/eksctl
+    brew tap weaveworks/tap || echo "couldn't tap weaveworks"
+    brew install weaveworks/tap/eksctl || echo "couldn't install weaveworks/tap/eksctl"
 }
 
 function ensureEKSCTL() {
