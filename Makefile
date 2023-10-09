@@ -1,18 +1,18 @@
 # use our EKS cluster
 updateLocalKubeConfig: ensureClusterCreated
-	source aws.sh && updateLocalKubeConfig
+	. aws.sh && updateLocalKubeConfig
 
 # get EKS cluster info
 getCluster:
-	source aws.sh && getCluster
+	. aws.sh && getCluster
 
 deleteCluster:
-	source aws.sh && deleteCluster
+	. aws.sh && deleteCluster
 
 # creates our EKS cluster on AWS based on the 'initSettings' config
 ensureClusterCreated: installEksCtl
-	source aws.sh && ensureClusterCreated
+	. aws.sh && ensureClusterCreated
 
 # prerequisite - just check eksctl is installed (and install if needed)
 installEksCtl:
-	source aws.sh && ensureEKSCTL
+	. aws.sh && ensureEKSCTL
