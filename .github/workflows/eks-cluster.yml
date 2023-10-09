@@ -33,5 +33,6 @@ jobs:
           echo "listing..."
           ls -Alrth
           echo "calling make..."
-          make ensureClusterCreated
+          . aws.sh
+          debug
 

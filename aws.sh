@@ -4,6 +4,10 @@ set -x
 
 # functions for creating an EKS cluster and setting local kubectl config
 
+function debug() {
+    echo "hello world"
+}
+
 function init() {
     export CLUSTER_NAME=${CLUSTER_NAME:-kind-lab-dev}
     export AWS_REGION=${AWS_REGION:-eu-west-2}
