@@ -21,7 +21,7 @@ function init() {
     echo "NODE_COUNT   : $NODE_COUNT"
 }
 
-function installEKSCTL() {
+function installEksCtl() {
     init
     echo "installing eksctl"
     brew tap weaveworks/tap
@@ -32,7 +32,7 @@ function ensureEKSCTL() {
     init
     echo -ne "checking EKSCTL `which eksctl`\r"
     echo "checking eksctl `which eksctl`"
-    which eksctl || installEKSCTL
+    which eksctl || installEksCtl
 }
 
 # 
