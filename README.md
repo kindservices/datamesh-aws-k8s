@@ -12,14 +12,8 @@ This repo is setup with github actions in ./github/workflow, which need an `AWS_
 
 See [here](./awsIAM.md) for setting up AWS IAM.
 
-### Configure GitHub Secrets:
+See https://github.com/marketplace/actions/kubectl-aws-eks
 
-Set up the following secrets in your GitHub repository:
-
-AWS_ACCESS_KEY_ID: Your AWS access key.
-AWS_SECRET_ACCESS_KEY: Your AWS secret key.
-
-To add secrets, go to your GitHub repository > Settings > Secrets > New repository secret.
 
 # Local Usage
 
