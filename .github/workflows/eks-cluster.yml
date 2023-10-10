@@ -29,7 +29,7 @@ jobs:
       - name: Install eksctl
         uses: moia-oss/setup-eksctl@v1
         with:
-          version: "latest" # default is latest
+          version: "0.161.0" # default is latest
         id: install
         #can we find anything online for below needs
       - name: Create EKS cluster
