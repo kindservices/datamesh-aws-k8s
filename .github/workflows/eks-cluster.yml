@@ -45,5 +45,7 @@ jobs:
           . aws.sh
           echo "calling installEksCtl"
           installEksCtl
+          echo "calling create cluster"
+          createCluster
           echo "calling ensureClusterCreated"
           ensureClusterCreated
