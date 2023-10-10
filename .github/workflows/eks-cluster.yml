@@ -31,6 +31,7 @@ jobs:
         with:
           version: "latest" # default is latest
         id: install
+        #can we find anything online for below needs
       - name: Create EKS cluster
         run: |
           echo "current dir"
