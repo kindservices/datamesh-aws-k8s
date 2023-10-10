@@ -32,7 +32,7 @@ function ensureEKSCTL() {
 # 
 function createCluster() {
     echo "creating cluster"
-    eksctl create cluster  --name $CLUSTER_NAME --region $AWS_REGION --nodegroup-name ${CLUSTER_NAME}-nodes --node-type $NODE_TYPE --nodes $NODE_COUNT --dry-run
+    eksctl create cluster  --name $CLUSTER_NAME --region $AWS_REGION --nodegroup-name ${CLUSTER_NAME}-nodes --node-type $NODE_TYPE --nodes $NODE_COUNT 
 }
 
 function deleteCluster() {
