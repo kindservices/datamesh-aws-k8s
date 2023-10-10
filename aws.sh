@@ -9,7 +9,6 @@ function init() {
     export AWS_REGION=${AWS_REGION:-eu-west-2}
     export NODE_TYPE=${NODE_TYPE:-"t3.small"}
     export NODE_COUNT=${NODE_COUNT:-5}
-    export PATH="$HOME/.linuxbrew/bin:$PATH"
     echo "CLUSTER_NAME : $CLUSTER_NAME"
     echo "AWS_REGION   : $AWS_REGION"
     echo "NODE_TYPE    : $NODE_TYPE"
