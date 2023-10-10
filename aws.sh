@@ -5,7 +5,7 @@
 # functions for creating an EKS cluster and setting local kubectl config
 
 function init() {
-    export CLUSTER_NAME=${CLUSTER_NAME:-kind-lab-dev2}
+    export CLUSTER_NAME=${CLUSTER_NAME:-kind-lab-dev}
     export AWS_REGION=${AWS_REGION:-eu-west-2}
     export NODE_TYPE=${NODE_TYPE:-"t3.small"}
     export NODE_COUNT=${NODE_COUNT:-5}
