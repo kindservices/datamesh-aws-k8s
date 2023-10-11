@@ -8,34 +8,13 @@ The script assumes an AWS account, the `aws` cli installed and logged in (e.g. a
 
 # Github Actions Build
 
-This repo is setup with github actions in ./github/workflow, which need an `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` setting up.
+We configured our AWS account to use Open ID Connect, following [github’s recommendation for OIDC](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect). 
 
-See [here](./awsIAM.md) for setting up AWS IAM.
+The simplest instructions we've found are well-described [in this video](https://www.youtube.com/watch?v=aOoRaVuh8Lc).
 
-### Configure GitHub Secrets:
+With authentication in place, our [github actions](./.github/workflows/eks-cluster.yml) invoke our eksctl via our Makefile to provision a cluster.
 
-Set up the following secrets in your GitHub repository:
 
-AWS_ACCESS_KEY_ID: Your AWS access key.
-AWS_SECRET_ACCESS_KEY: Your AWS secret key.
+# Using EKSCTL
 
-To add secrets, go to your GitHub repository > Settings > Secrets > New repository secret.
-
-# Local Usage
-
-You can use this makefile locally as well provided you have an `aws` CLI installed (see [here](./loggingIn.md))
-
-## Create a cluster on AWS:
-```
-make CLUSTER_NAME=example
-```
-
-# get the cluster info
-```
-make getCluster
-```
-
-## Delete a cluster on AWS:
-```
-make deleteCluster CLUSTER_NAME=example
-```
+You can read more about eksctl [here](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html).

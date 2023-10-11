@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - aaron
 permissions:
   id-token: write # This is required for requesting the JWT
   contents: read # This is required for actions/checkout
@@ -26,17 +25,15 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: arn:aws:iam::427380295363:role/Github_AWS_OICD
-          role-session-name: samplerolesession
+          role-session-name: githubrolesession
           aws-region: ${{ env.AWS_REGION }}
       - name: Install eksctl
         uses: moia-oss/setup-eksctl@v1
         with:
           version: "v0.161.0" # default is latest
         id: install
-        #can we find anything online for below needs
       - name: Create EKS cluster
         run: |
           . aws.sh
           eksctl version | installEksCtl
-          echo "trying ensureClusterCreated"
           ensureClusterCreated
