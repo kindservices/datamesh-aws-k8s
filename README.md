@@ -15,6 +15,26 @@ The simplest instructions we've found are well-described [in this video](https:/
 With authentication in place, our [github actions](./.github/workflows/eks-cluster.yml) invoke our eksctl via our Makefile to provision a cluster.
 
 
+# Using AWS Locally
+
+## AWS CLI
+
+Having [set up AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html).
+
+in the AWS console:
+
+see [here](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
+
+```shell
+aws sts get-caller-identity
+
+export CLUSTER_NAME=kind-lab-dev-1
+export AWS_REGION=eu-west-2
+aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
+
+
+```
+
 # Using EKSCTL
 
 You can read more about eksctl [here](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html).
